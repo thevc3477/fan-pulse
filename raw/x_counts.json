@@ -1,0 +1,28 @@
+{
+  "collected_at_utc": "2026-11-24T22:57:24Z",
+  "window": "last 7 days (2026-11-17T22:56Z to 2026-11-24T22:57Z)",
+  "series": {
+    "packers": {"query": "(\"Packers\" OR \"Green Bay\" OR #GoPackGo) (NFL OR football OR Rams OR Thanksgiving OR game) -is:retweet lang:en", "total": 6817, "daily": [62, 789, 690, 670, 542, 740, 1592, 1732]},
+    "rams": {"query": "(\"LA Rams\" OR \"Los Angeles Rams\" OR \"Rams\") (NFL OR football OR Packers OR Stafford OR Thanksgiving) -is:retweet lang:en", "total": 5621, "daily": [29, 444, 925, 843, 451, 541, 1059, 1329]},
+    "bears": {"query": "(\"Chicago Bears\" OR #DaBears OR \"Bears\") (NFL OR Lions OR Caleb OR Thanksgiving OR game) -is:retweet lang:en", "total": 17825, "daily": [135, 1562, 1343, 1251, 1252, 5357, 3914, 3011]},
+    "lions": {"query": "(\"Detroit Lions\" OR #OnePride OR \"Lions\") (NFL OR Bears OR Goff OR Gibbs OR Thanksgiving) -is:retweet lang:en", "total": 12563, "daily": [93, 1019, 847, 734, 594, 3728, 3135, 2413]},
+    "eagles": {"query": "(\"Philadelphia Eagles\" OR \"Eagles\" OR #FlyEaglesFly) (NFL OR Cowboys OR Hurts OR Thanksgiving) -is:retweet lang:en", "total": 7282, "daily": [53, 682, 582, 537, 476, 2239, 1386, 1327]},
+    "cowboys": {"query": "(\"Dallas Cowboys\" OR \"Cowboys\" OR #DallasCowboys) (NFL OR Eagles OR Prescott OR Dak OR Thanksgiving) -is:retweet lang:en", "total": 8803, "daily": [65, 879, 659, 560, 488, 2941, 1713, 1498]},
+    "chiefs": {"query": "(\"Kansas City Chiefs\" OR \"Chiefs\" OR #ChiefsKingdom) (NFL OR Bills OR Mahomes OR Thanksgiving) -is:retweet lang:en", "total": 12761, "daily": [78, 1190, 1121, 856, 702, 3241, 3116, 2457]},
+    "bills": {"query": "(\"Buffalo Bills\" OR \"Bills\" OR #BillsMafia) (NFL OR Chiefs OR Allen OR Thanksgiving) -is:retweet lang:en", "total": 12815, "daily": [75, 1218, 977, 864, 795, 3381, 2909, 2596]},
+    "timberwolves": {"query": "(\"Timberwolves\" OR \"Wolves\") (NBA OR OKC OR Thunder OR Edwards OR Ant) -is:retweet lang:en", "total": 4749, "daily": [73, 824, 817, 810, 414, 464, 618, 729]},
+    "thunder": {"query": "(\"OKC Thunder\" OR \"Thunder\" OR \"Shai\" OR \"SGA\") (NBA OR Timberwolves OR Wolves OR OKC) -is:retweet lang:en", "total": 6446, "daily": [26, 974, 881, 892, 997, 749, 1052, 875]},
+    "texas": {"query": "(\"Texas Longhorns\" OR \"Longhorns\" OR \"Texas\") (CFB OR football OR \"Texas A&M\" OR Aggies OR Arch) -is:retweet lang:en", "total": 8615, "daily": [54, 1456, 953, 942, 1753, 1572, 910, 975]},
+    "texas_am": {"query": "(\"Texas A&M\" OR \"Aggies\" OR \"Gig Em\") (CFB OR football OR Texas OR Longhorns) -is:retweet lang:en", "total": 2191, "daily": [7, 255, 284, 336, 358, 400, 238, 313]},
+    "michigan": {"query": "(\"Michigan\" OR \"Wolverines\" OR #GoBlue) (CFB OR football OR \"Ohio State\" OR Buckeyes OR OSU) -is:retweet lang:en", "total": 11663, "daily": [61, 1348, 857, 1015, 2524, 2758, 1413, 1687]},
+    "ohio_state": {"query": "(\"Ohio State\" OR \"Buckeyes\" OR #GoBucks) (CFB OR football OR Michigan OR Wolverines) -is:retweet lang:en", "total": 8186, "daily": [20, 800, 475, 515, 2353, 1999, 1063, 961]},
+    "purdy_mvp": {"query": "(\"Brock Purdy\" OR \"Purdy\") (MVP OR 49ers OR NFL) -is:retweet lang:en", "total": 7898, "daily": [23, 412, 405, 331, 235, 428, 4014, 2050]},
+    "burrow_mvp": {"query": "(\"Joe Burrow\" OR \"Burrow\") (MVP OR Bengals OR NFL) -is:retweet lang:en", "total": 10881, "daily": [48, 1032, 737, 572, 570, 612, 2430, 4880]},
+    "allen_mahomes_mvp": {"query": "(\"Josh Allen\" OR \"Patrick Mahomes\") (MVP) (NFL OR Bills OR Chiefs) -is:retweet lang:en", "total": 293, "daily": [4, 52, 31, 15, 26, 46, 60, 59]},
+    "smith_heisman": {"query": "\"Jeremiah Smith\" Heisman -is:retweet lang:en", "total": 1089, "daily": [3, 44, 47, 39, 590, 197, 94, 75]},
+    "dampier_mensah_heisman": {"query": "(\"Devon Dampier\" OR \"Darian Mensah\") Heisman -is:retweet lang:en", "total": 411, "daily": [1, 28, 18, 27, 34, 180, 68, 55]},
+    "odyssey_oscar": {"query": "(\"The Odyssey\" OR \"Odyssey\") (Nolan OR Oscar OR \"Best Picture\" OR movie) -is:retweet lang:en", "total": 2396, "daily": [25, 459, 409, 315, 325, 319, 275, 269]},
+    "ycse_oscar": {"query": "\"You Can See Everything\" (Oscar OR \"Best Picture\" OR documentary OR A24) -is:retweet lang:en", "total": 560, "daily": [2, 43, 43, 67, 66, 78, 104, 157]},
+    "dune_ycse_oscar": {"query": "(\"Dune: Part Three\" OR \"Dune Part Three\" OR \"Dune 3\" OR \"You Can See Everything\") (Oscar OR \"Best Picture\" OR Villeneuve OR movie) -is:retweet lang:en", "total": 934, "daily": [10, 149, 72, 76, 157, 89, 162, 219]}
+  }
+}
