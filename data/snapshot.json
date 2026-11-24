@@ -1,0 +1,1017 @@
+{
+  "kalshi_updated_ct": "Nov 24, 2026 at 05:05 PM CT",
+  "kalshi_updated_iso": "2026-11-24T17:05:20.718398-06:00",
+  "x_snapshot_ct": "Nov 24, 2026 at 4:57 PM CT",
+  "x_window_label": "7-day X window (Nov 17 - Nov 24, 2026)",
+  "total_events": 10,
+  "total_x_posts_7d": 149946,
+  "total_kalshi_contracts": 116440502,
+  "top_divergences": [
+    {
+      "id": "KXNCAAFGAME-26NOV28MICHOSU",
+      "title": "Michigan at Ohio State",
+      "abs_divergence_pp": 34.1,
+      "divergence_summary": "Crowd +34.1 pp on MICH",
+      "kalshi_label": "MICH 22.5%",
+      "crowd_label": "MICH 56.6%"
+    },
+    {
+      "id": "KXHEISMAN-27",
+      "title": "2026 Heisman Trophy",
+      "abs_divergence_pp": 22.2,
+      "divergence_summary": "Crowd +22.2 pp on FIELD",
+      "kalshi_label": "SMITH 80.7%",
+      "crowd_label": "SMITH 58.5%"
+    },
+    {
+      "id": "KXNFLGAME-26NOV26PHIDAL",
+      "title": "Eagles at Cowboys",
+      "abs_divergence_pp": 20.9,
+      "divergence_summary": "Crowd +20.9 pp on PHI",
+      "kalshi_label": "PHI 20.5%",
+      "crowd_label": "PHI 41.4%"
+    }
+  ],
+  "events": [
+    {
+      "id": "KXNFLGAME-26NOV25GBLAR",
+      "category": "NFL",
+      "tag": "NFL \u00b7 THANKSGIVING EVE",
+      "title": "Packers at Rams",
+      "subtitle": "Wed Nov 25, 7:15 PM CT \u00b7 Netflix",
+      "kalshi_url": "https://kalshi.com/events/KXNFLGAME-26NOV25GBLAR",
+      "side_a": {
+        "label": "Green Bay Packers",
+        "short": "GB",
+        "kalshi_raw_cents": 44.5,
+        "kalshi_h2h_pct": 44.5,
+        "x_posts_7d": 6817,
+        "x_buzz_pct": 54.8,
+        "x_sentiment_votes": 3,
+        "x_sentiment_pct": 30.0,
+        "x_crowd_pct": 42.4,
+        "kalshi_vol_share_pct": 79.6,
+        "daily_series": [
+          62,
+          789,
+          690,
+          670,
+          542,
+          740,
+          1592,
+          1732
+        ]
+      },
+      "side_b": {
+        "label": "Los Angeles Rams",
+        "short": "LAR",
+        "kalshi_raw_cents": 55.5,
+        "kalshi_h2h_pct": 55.5,
+        "x_posts_7d": 5621,
+        "x_buzz_pct": 45.2,
+        "x_sentiment_votes": 7,
+        "x_sentiment_pct": 70.0,
+        "x_crowd_pct": 57.6,
+        "kalshi_vol_share_pct": 20.4,
+        "daily_series": [
+          29,
+          444,
+          925,
+          843,
+          451,
+          541,
+          1059,
+          1329
+        ]
+      },
+      "is_multi_outcome": false,
+      "total_contracts": 1253615,
+      "vol_24h_contracts": 609722,
+      "x_total_7d": 12438,
+      "sample_posts_n": 16,
+      "sample_directional_n": 10,
+      "divergence_pp": -2.1,
+      "abs_divergence_pp": 2.1,
+      "regime": "CONSENSUS",
+      "divergence_summary": "Crowd +2.1 pp on LAR",
+      "headline": "Packers draw 54.8% of X buzz after Micah Parsons returns and Rams lose Puka Nacua, while Kalshi holds LA as 55.5% favorite.",
+      "story_bullets": [
+        "Green Bay activated Micah Parsons for Wednesday night, while LA ruled out Puka Nacua (knee) and TE Terrance Ferguson (ankle).",
+        "Matt LaFleur is 5-0 vs. Sean McVay, yet Kalshi's Rams share stays above 55% even as Packers contracts make up nearly 80% of market volume.",
+        "Netflix broadcasts the game with a U2 halftime show, creating a prime live-watch cultural moment."
+      ],
+      "activation_angle": "Run a 'Health vs. History' live prediction prop during Netflix's U2 halftime show. Packers fans dominate X chatter and contract flow, so a live second-half market booth or watch-party challenge in Chicago/Milwaukee taps huge Midwest demand.",
+      "evidence_posts": [
+        {
+          "author": "PackersRunNFC",
+          "url": "https://x.com/PackersRunNFC/status/2125317682538979764",
+          "created_at": "2026-11-24T19:56:00Z",
+          "likes": 80,
+          "impressions": 4000,
+          "text": "Packers will beat the Rams tomorrow night. Matt LaFleur OWNS Sean McVay, with a perfect 5-0 head to head record.",
+          "lean": "A"
+        },
+        {
+          "author": "rclemente2121",
+          "url": "https://x.com/rclemente2121/status/2122777622988087628",
+          "created_at": "2026-11-17T19:43:19Z",
+          "likes": 890,
+          "impressions": 15186,
+          "text": "beat the packers!",
+          "lean": "B"
+        },
+        {
+          "author": "TheSportsCouch",
+          "url": "https://x.com/TheSportsCouch/status/2125273293628620802",
+          "created_at": "2026-11-24T17:00:00Z",
+          "likes": 12,
+          "impressions": 850,
+          "text": "Packers +3 | 5 Units; Packers ML +130 | 2 Units. Micah Parsons is reportedly returning.",
+          "lean": "A"
+        }
+      ]
+    },
+    {
+      "id": "KXNFLGAME-26NOV26CHIDET",
+      "category": "NFL",
+      "tag": "NFL \u00b7 THANKSGIVING EARLY",
+      "title": "Bears at Lions",
+      "subtitle": "Thu Nov 26, 12:00 PM CT \u00b7 CBS \u00b7 Wu-Tang Halftime",
+      "kalshi_url": "https://kalshi.com/events/KXNFLGAME-26NOV26CHIDET",
+      "side_a": {
+        "label": "Chicago Bears",
+        "short": "CHI",
+        "kalshi_raw_cents": 55.5,
+        "kalshi_h2h_pct": 55.5,
+        "x_posts_7d": 17825,
+        "x_buzz_pct": 58.7,
+        "x_sentiment_votes": 5,
+        "x_sentiment_pct": 50.0,
+        "x_crowd_pct": 54.4,
+        "kalshi_vol_share_pct": 42.3,
+        "daily_series": [
+          135,
+          1562,
+          1343,
+          1251,
+          1252,
+          5357,
+          3914,
+          3011
+        ]
+      },
+      "side_b": {
+        "label": "Detroit Lions",
+        "short": "DET",
+        "kalshi_raw_cents": 44.5,
+        "kalshi_h2h_pct": 44.5,
+        "x_posts_7d": 12563,
+        "x_buzz_pct": 41.3,
+        "x_sentiment_votes": 5,
+        "x_sentiment_pct": 50.0,
+        "x_crowd_pct": 45.6,
+        "kalshi_vol_share_pct": 57.7,
+        "daily_series": [
+          93,
+          1019,
+          847,
+          734,
+          594,
+          3728,
+          3135,
+          2413
+        ]
+      },
+      "is_multi_outcome": false,
+      "total_contracts": 426986,
+      "vol_24h_contracts": 202524,
+      "x_total_7d": 30388,
+      "sample_posts_n": 14,
+      "sample_directional_n": 10,
+      "divergence_pp": -1.1,
+      "abs_divergence_pp": 1.1,
+      "regime": "CONSENSUS",
+      "divergence_summary": "Crowd +1.1 pp on DET",
+      "headline": "Both NFC North leaders enter 8-2. Bears own 58.7% of 7-day X volume (17,825 posts), while Lions fans lean slightly louder in pick threads.",
+      "story_bullets": [
+        "Highest-buzz matchup on the Thanksgiving slate: 30,388 combined X posts across both teams in 7 days.",
+        "Kalshi prices Chicago at 55.5% (Bears -2.5 on the road), tracking closely with Chicago's 58.7% X buzz share.",
+        "Detroit's #OnePride fanbase floods reply threads on the 92nd anniversary of the 1934 Bears-Lions Thanksgiving game, with Wu-Tang Clan headlining halftime."
+      ],
+      "activation_angle": "Chicago hometown opportunity: host a Thanksgiving midday Bears vs. Lions watch party with Vinyl Collectiv-style culture programming (tying into the Wu-Tang halftime show) and live NFC North odds boards.",
+      "evidence_posts": [
+        {
+          "author": "daveypigskin",
+          "url": "https://x.com/daveypigskin/status/2124071164070756855",
+          "created_at": "2026-11-21T09:23:23Z",
+          "likes": 4,
+          "impressions": 634,
+          "text": "Thanksgiving POD Mizzou / Chicago Bears (Thursday) MLP +154 FD",
+          "lean": "A"
+        },
+        {
+          "author": "evanfoxy",
+          "url": "https://x.com/evanfoxy/status/2122016704838402118",
+          "created_at": "2026-11-15T17:19:42Z",
+          "likes": 733,
+          "impressions": 23565,
+          "text": "FIVE IN A ROW FOR THE DETROIT LIONS #OnePride",
+          "lean": "B"
+        },
+        {
+          "author": "TheSharpWire",
+          "url": "https://x.com/TheSharpWire/status/2125041888415584300",
+          "created_at": "2026-11-24T01:40:42Z",
+          "likes": 0,
+          "impressions": 120,
+          "text": "The 2026 Thanksgiving stage is set for a high-stakes NFC North collision as the 8-2 Chicago Bears travel to face the 8-2 Detroit Lions at Ford Field. Chicago Bears -2.5 (-115).",
+          "lean": "A"
+        }
+      ]
+    },
+    {
+      "id": "KXNFLGAME-26NOV26PHIDAL",
+      "category": "NFL",
+      "tag": "NFL \u00b7 THANKSGIVING LATE",
+      "title": "Eagles at Cowboys",
+      "subtitle": "Thu Nov 26, 3:30 PM CT \u00b7 FOX \u00b7 Miranda Lambert Halftime",
+      "kalshi_url": "https://kalshi.com/events/KXNFLGAME-26NOV26PHIDAL",
+      "side_a": {
+        "label": "Philadelphia Eagles",
+        "short": "PHI",
+        "kalshi_raw_cents": 20.5,
+        "kalshi_h2h_pct": 20.5,
+        "x_posts_7d": 7282,
+        "x_buzz_pct": 45.3,
+        "x_sentiment_votes": 3,
+        "x_sentiment_pct": 37.5,
+        "x_crowd_pct": 41.4,
+        "kalshi_vol_share_pct": 76.8,
+        "daily_series": [
+          53,
+          682,
+          582,
+          537,
+          476,
+          2239,
+          1386,
+          1327
+        ]
+      },
+      "side_b": {
+        "label": "Dallas Cowboys",
+        "short": "DAL",
+        "kalshi_raw_cents": 79.5,
+        "kalshi_h2h_pct": 79.5,
+        "x_posts_7d": 8803,
+        "x_buzz_pct": 54.7,
+        "x_sentiment_votes": 5,
+        "x_sentiment_pct": 62.5,
+        "x_crowd_pct": 58.6,
+        "kalshi_vol_share_pct": 23.2,
+        "daily_series": [
+          65,
+          879,
+          659,
+          560,
+          488,
+          2941,
+          1713,
+          1498
+        ]
+      },
+      "is_multi_outcome": false,
+      "total_contracts": 365661,
+      "vol_24h_contracts": 192918,
+      "x_total_7d": 16085,
+      "sample_posts_n": 12,
+      "sample_directional_n": 8,
+      "divergence_pp": 20.9,
+      "abs_divergence_pp": 20.9,
+      "regime": "HIGH DIVERGENCE",
+      "divergence_summary": "Crowd +20.9 pp on PHI",
+      "headline": "Kalshi prices Dallas at 79.5% against a slumping Philadelphia squad, but X buzz is split 45/55 as fans remain skeptical of 5-6 Dallas.",
+      "story_bullets": [
+        "Big gap between market certainty (Dallas ~80%) and X skepticism: fans openly doubt Dallas can string wins together despite Dak Prescott's record chase.",
+        "Eagles fanbase remains active on X (7,282 weekly posts) even with Philly struggling, creating asymmetric contrarian conversation.",
+        "Miranda Lambert headlines the 30th Salvation Army Red Kettle Kickoff halftime show alongside Lauren Daigle on the anthem."
+      ],
+      "activation_angle": "Classic 'Skeptical Crowd vs. Heavy Favorite' setup. Brands activating on the afternoon FOX window can lean into live in-game momentum props (will Dallas hold the lead?) rather than pre-game winner hype.",
+      "evidence_posts": [
+        {
+          "author": "BET99Sportsbook",
+          "url": "https://x.com/BET99Sportsbook/status/2125363254474182976",
+          "created_at": "2026-11-24T22:57:41Z",
+          "likes": 0,
+          "impressions": 50,
+          "text": "The Cowboys have scored 91 points over their last two games and still managed to lose one of them. Despite Prescott's recent performances, Dallas sits at 5-6 heading into Thanksgiving.",
+          "lean": "A"
+        },
+        {
+          "author": "SCHOTTENHEIM3R",
+          "url": "https://x.com/SCHOTTENHEIM3R/status/2125094826425102420",
+          "created_at": "2026-11-24T05:11:03Z",
+          "likes": 288,
+          "impressions": 299723,
+          "text": "Cowboys should win out the defense just has to be solid not even good the offense will carry like always 11-6. Eagles aren't beating: Cowboys Giants 49ers",
+          "lean": "B"
+        },
+        {
+          "author": "jameldean22",
+          "url": "https://x.com/jameldean22/status/2125363519185133797",
+          "created_at": "2026-11-24T22:58:44Z",
+          "likes": 0,
+          "impressions": 10,
+          "text": "Cowboys won't make playoffs. Even if they win out he probably doesn't. Their team performance simply isn't good enough",
+          "lean": "A"
+        }
+      ]
+    },
+    {
+      "id": "KXNFLGAME-26NOV26KCBUF",
+      "category": "NFL",
+      "tag": "NFL \u00b7 THANKSGIVING NIGHT",
+      "title": "Chiefs at Bills",
+      "subtitle": "Thu Nov 26, 7:20 PM CT \u00b7 NBC \u00b7 Goo Goo Dolls Halftime",
+      "kalshi_url": "https://kalshi.com/events/KXNFLGAME-26NOV26KCBUF",
+      "side_a": {
+        "label": "Kansas City Chiefs",
+        "short": "KC",
+        "kalshi_raw_cents": 41.5,
+        "kalshi_h2h_pct": 41.5,
+        "x_posts_7d": 12761,
+        "x_buzz_pct": 49.9,
+        "x_sentiment_votes": 7,
+        "x_sentiment_pct": 58.3,
+        "x_crowd_pct": 54.1,
+        "kalshi_vol_share_pct": 57.6,
+        "daily_series": [
+          78,
+          1190,
+          1121,
+          856,
+          702,
+          3241,
+          3116,
+          2457
+        ]
+      },
+      "side_b": {
+        "label": "Buffalo Bills",
+        "short": "BUF",
+        "kalshi_raw_cents": 58.5,
+        "kalshi_h2h_pct": 58.5,
+        "x_posts_7d": 12815,
+        "x_buzz_pct": 50.1,
+        "x_sentiment_votes": 5,
+        "x_sentiment_pct": 41.7,
+        "x_crowd_pct": 45.9,
+        "kalshi_vol_share_pct": 42.4,
+        "daily_series": [
+          75,
+          1218,
+          977,
+          864,
+          795,
+          3381,
+          2909,
+          2596
+        ]
+      },
+      "is_multi_outcome": false,
+      "total_contracts": 288341,
+      "vol_24h_contracts": 107420,
+      "x_total_7d": 25576,
+      "sample_posts_n": 16,
+      "sample_directional_n": 12,
+      "divergence_pp": 12.6,
+      "abs_divergence_pp": 12.6,
+      "regime": "HIGH DIVERGENCE",
+      "divergence_summary": "Crowd +12.6 pp on KC",
+      "headline": "X buzz is deadlocked at 49.9% KC / 50.1% BUF across 25,576 posts, while Kalshi prices the 9-1 Bills as a 58.5% favorite for the AFC #1 seed.",
+      "story_bullets": [
+        "Nearly identical 7-day X post volume (12,761 KC vs. 12,815 BUF) reflects classic 'Bills regular season vs. never fade Mahomes' tension.",
+        "Kalshi gives 9-1 Buffalo a ~58.5% edge at Highmark Stadium with the AFC bye on the line.",
+        "Buffalo hometown band Goo Goo Dolls performs at halftime on NBC primetime."
+      ],
+      "activation_angle": "Primetime Thanksgiving night delivers maximum family-room second-screen engagement. A simple 'Mahomes Magic vs. Bills #1 Seed' single-question social poll synced to NBC halftime drives huge organic sharing.",
+      "evidence_posts": [
+        {
+          "author": "DBoyce2017",
+          "url": "https://x.com/DBoyce2017/status/2125293837648339305",
+          "created_at": "2026-11-24T18:21:51Z",
+          "likes": 15,
+          "impressions": 1250,
+          "text": "Naw you don't deserve no turkey u got to be stupid to fade Patrick Mahomes on Turkey Day",
+          "lean": "A"
+        },
+        {
+          "author": "FTFonFS1",
+          "url": "https://x.com/FTFonFS1/status/2125360059945525587",
+          "created_at": "2026-11-24T22:45:00Z",
+          "likes": 28,
+          "impressions": 4392,
+          "text": "It is a Must-Win for the Bills and Josh Allen. They've never played the AFC Championship as the 1-seed.",
+          "lean": "B"
+        },
+        {
+          "author": "ThePepeAlpha",
+          "url": "https://x.com/ThePepeAlpha/status/2125360948844318852",
+          "created_at": "2026-11-24T22:48:32Z",
+          "likes": 1,
+          "impressions": 15,
+          "text": "CHIEFS +2.5 @ BILLS",
+          "lean": "A"
+        }
+      ]
+    },
+    {
+      "id": "KXNBAGAME-26NOV25MINOKC",
+      "category": "NBA",
+      "tag": "NBA CUP \u00b7 WEST GROUP B",
+      "title": "Timberwolves at Thunder",
+      "subtitle": "Wed Nov 25, 6:30 PM CT \u00b7 Paycom Center",
+      "kalshi_url": "https://kalshi.com/events/KXNBAGAME-26NOV25MINOKC",
+      "side_a": {
+        "label": "Minnesota Timberwolves",
+        "short": "MIN",
+        "kalshi_raw_cents": 50.0,
+        "kalshi_h2h_pct": 49.8,
+        "x_posts_7d": 4749,
+        "x_buzz_pct": 42.4,
+        "x_sentiment_votes": 6,
+        "x_sentiment_pct": 66.7,
+        "x_crowd_pct": 54.5,
+        "kalshi_vol_share_pct": 65.0,
+        "daily_series": [
+          73,
+          824,
+          817,
+          810,
+          414,
+          464,
+          618,
+          729
+        ]
+      },
+      "side_b": {
+        "label": "Oklahoma City Thunder",
+        "short": "OKC",
+        "kalshi_raw_cents": 50.5,
+        "kalshi_h2h_pct": 50.2,
+        "x_posts_7d": 6446,
+        "x_buzz_pct": 57.6,
+        "x_sentiment_votes": 3,
+        "x_sentiment_pct": 33.3,
+        "x_crowd_pct": 45.5,
+        "kalshi_vol_share_pct": 35.0,
+        "daily_series": [
+          26,
+          974,
+          881,
+          892,
+          997,
+          749,
+          1052,
+          875
+        ]
+      },
+      "is_multi_outcome": false,
+      "total_contracts": 86119,
+      "vol_24h_contracts": 79407,
+      "x_total_7d": 11195,
+      "sample_posts_n": 12,
+      "sample_directional_n": 9,
+      "divergence_pp": 4.7,
+      "abs_divergence_pp": 4.7,
+      "regime": "CONSENSUS",
+      "divergence_summary": "Crowd +4.7 pp on MIN",
+      "headline": "Kalshi prices OKC as a razor-thin 50.5% coin flip, while X pick sentiment swings heavily toward 13-5 Minnesota despite OKC holding higher total mention volume.",
+      "story_bullets": [
+        "Minnesota enters 13-5 (even missing Anthony Edwards), while 10-8 OKC just dropped a 125-120 loss to Indiana despite Shai Gilgeous-Alexander's 38 points.",
+        "Fans in NBA Cup reply threads push back hard on OKC being favored, yet national SGA/OKC chatter drives 57.6% of total 7-day X volume.",
+        "Grassroots proof point: Minneapolis fans organized 'Wolvesgiving', a Nov 25 watch party and vendor market at Fowling Warehouse around this exact game."
+      ],
+      "activation_angle": "Local fan markets like 'Wolvesgiving' show how NBA Cup nights already spawn IRL watch parties. Kalshi can co-sponsor fan-organized cup watch parties with custom group-stage probability boards.",
+      "evidence_posts": [
+        {
+          "author": "buttasports",
+          "url": "https://x.com/buttasports/status/2117783437775872158",
+          "created_at": "2026-11-04T00:58:12Z",
+          "likes": 138,
+          "impressions": 16355,
+          "text": "Wolvesgiving: The biggest Timberwolves market and watch party of the year! Nov 25th at Fowling Warehouse for the Wolves vs OKC game",
+          "lean": "A"
+        },
+        {
+          "author": "KristenLee1212",
+          "url": "https://x.com/KristenLee1212/status/2116242069698015648",
+          "created_at": "2026-10-30T18:53:21Z",
+          "likes": 1,
+          "impressions": 390,
+          "text": "OKC without JDub and Cason still have a 37% more talented roster. Its Spurs, Rockets then Thunder.",
+          "lean": "B"
+        },
+        {
+          "author": "AntMVP2026",
+          "url": "https://x.com/AntMVP2026/status/2121091407897338294",
+          "created_at": "2026-11-13T04:02:54Z",
+          "likes": 17,
+          "impressions": 408,
+          "text": "With Ant on the timberwolves actually have a higher ORtg than Spurs, OKC (Especially them OKC offense has plummeted)",
+          "lean": "A"
+        }
+      ]
+    },
+    {
+      "id": "KXNCAAFGAME-26NOV27TEXTXAM",
+      "category": "CFB",
+      "tag": "CFB \u00b7 BLACK FRIDAY RIVALRY",
+      "title": "Texas at Texas A&M",
+      "subtitle": "Fri Nov 27, 6:30 PM CT \u00b7 Kyle Field",
+      "kalshi_url": "https://kalshi.com/events/KXNCAAFGAME-26NOV27TEXTXAM",
+      "side_a": {
+        "label": "Texas Longhorns",
+        "short": "TEX",
+        "kalshi_raw_cents": 81.0,
+        "kalshi_h2h_pct": 80.6,
+        "x_posts_7d": 8615,
+        "x_buzz_pct": 79.7,
+        "x_sentiment_votes": 7,
+        "x_sentiment_pct": 77.8,
+        "x_crowd_pct": 78.8,
+        "kalshi_vol_share_pct": 56.8,
+        "daily_series": [
+          54,
+          1456,
+          953,
+          942,
+          1753,
+          1572,
+          910,
+          975
+        ]
+      },
+      "side_b": {
+        "label": "Texas A&M Aggies",
+        "short": "TXAM",
+        "kalshi_raw_cents": 19.5,
+        "kalshi_h2h_pct": 19.4,
+        "x_posts_7d": 2191,
+        "x_buzz_pct": 20.3,
+        "x_sentiment_votes": 2,
+        "x_sentiment_pct": 22.2,
+        "x_crowd_pct": 21.2,
+        "kalshi_vol_share_pct": 43.2,
+        "daily_series": [
+          7,
+          255,
+          284,
+          336,
+          358,
+          400,
+          238,
+          313
+        ]
+      },
+      "is_multi_outcome": false,
+      "total_contracts": 187780,
+      "vol_24h_contracts": 31891,
+      "x_total_7d": 10806,
+      "sample_posts_n": 11,
+      "sample_directional_n": 9,
+      "divergence_pp": -1.8,
+      "abs_divergence_pp": 1.8,
+      "regime": "CONSENSUS",
+      "divergence_summary": "Crowd +1.8 pp on TXAM",
+      "headline": "Tightest market-crowd alignment on the board: Kalshi puts Texas at 80.5% and X buzz runs 79.7% Longhorns (8,615 vs. 2,191 posts).",
+      "story_bullets": [
+        "9-2 Texas enters off a 45-3 rout with Arch Manning rolling, while 4-7 A&M faces a QB shakeup between Marcel Reed and Brady Hart.",
+        "Even with massive consensus on Texas, viral Aggie underdog stunts (like the '12th Cran' cranberry sauce bet with 64k+ views) drive high engagement.",
+        "Benchmark control event: when the favorite is dominant on both the field and the timeline, X buzz share tracks Kalshi within ~1 percentage point."
+      ],
+      "activation_angle": "When odds are lopsided (80/20), pre-game winner polls are dull. Activate around rivalry fan stunts, over/under margin props, and tailgate challenges in College Station.",
+      "evidence_posts": [
+        {
+          "author": "CoffeeGirlTX",
+          "url": "https://x.com/CoffeeGirlTX/status/2125302719921418568",
+          "created_at": "2026-11-24T18:57:09Z",
+          "likes": 23,
+          "impressions": 461,
+          "text": "Operation Hook Em & Howdy: You (long-time Texas fan, coffee in one hand, pure confidence in the other) sit between Rowdy and Bevo.",
+          "lean": "A"
+        },
+        {
+          "author": "peydayreed",
+          "url": "https://x.com/peydayreed/status/2125249399223967958",
+          "created_at": "2026-11-24T15:25:16Z",
+          "likes": 408,
+          "impressions": 64485,
+          "text": "I guarantee the Texas A&M Aggies will beat the texas longhorns on Black Friday. I'm so confident that, if we lose, I will eat one full can of cranberry sauce for every point the longhorns beat us by... I'm calling it the 12th Cran.",
+          "lean": "B"
+        },
+        {
+          "author": "TakasiraVT",
+          "url": "https://x.com/TakasiraVT/status/2125323087210238215",
+          "created_at": "2026-11-24T20:18:05Z",
+          "likes": 14,
+          "impressions": 467,
+          "text": "Obligatory battered aggie post. I kinda feel bad for marcel reed. This falls on mike elko.",
+          "lean": "A"
+        }
+      ]
+    },
+    {
+      "id": "KXNCAAFGAME-26NOV28MICHOSU",
+      "category": "CFB",
+      "tag": "CFB \u00b7 THE GAME",
+      "title": "Michigan at Ohio State",
+      "subtitle": "Sat Nov 28, 11:00 AM CT \u00b7 Ohio Stadium",
+      "kalshi_url": "https://kalshi.com/events/KXNCAAFGAME-26NOV28MICHOSU",
+      "side_a": {
+        "label": "Michigan Wolverines",
+        "short": "MICH",
+        "kalshi_raw_cents": 22.5,
+        "kalshi_h2h_pct": 22.5,
+        "x_posts_7d": 11663,
+        "x_buzz_pct": 58.8,
+        "x_sentiment_votes": 6,
+        "x_sentiment_pct": 54.5,
+        "x_crowd_pct": 56.6,
+        "kalshi_vol_share_pct": 81.7,
+        "daily_series": [
+          61,
+          1348,
+          857,
+          1015,
+          2524,
+          2758,
+          1413,
+          1687
+        ]
+      },
+      "side_b": {
+        "label": "Ohio State Buckeyes",
+        "short": "OSU",
+        "kalshi_raw_cents": 77.5,
+        "kalshi_h2h_pct": 77.5,
+        "x_posts_7d": 8186,
+        "x_buzz_pct": 41.2,
+        "x_sentiment_votes": 5,
+        "x_sentiment_pct": 45.5,
+        "x_crowd_pct": 43.4,
+        "kalshi_vol_share_pct": 18.3,
+        "daily_series": [
+          20,
+          800,
+          475,
+          515,
+          2353,
+          1999,
+          1063,
+          961
+        ]
+      },
+      "is_multi_outcome": false,
+      "total_contracts": 148982,
+      "vol_24h_contracts": 38224,
+      "x_total_7d": 19849,
+      "sample_posts_n": 14,
+      "sample_directional_n": 11,
+      "divergence_pp": 34.1,
+      "abs_divergence_pp": 34.1,
+      "regime": "HIGH DIVERGENCE",
+      "divergence_summary": "Crowd +34.1 pp on MICH",
+      "headline": "LARGEST DIVERGENCE: Kalshi prices Ohio State at 77.5% (-10.5), yet X buzz (58.8% Michigan) and fan sentiment back the Wolverines after OSU's loss to Nebraska.",
+      "story_bullets": [
+        "Ohio State lost 31-28 to Nebraska on Nov 21 (3 losses in 4 games) and hasn't beaten Michigan at home since 2018; Ryan Day sits 2-4 in the rivalry.",
+        "Even Ohio State fan accounts note Buckeye supporters picking Michigan on the timeline, creating a 35+ point gap between X crowd sentiment and Kalshi's 22.5% Michigan price.",
+        "Michigan upset No. 4 UCLA last weekend, fueling 'rivalry chaos' narratives all week across 19,849 combined X posts."
+      ],
+      "activation_angle": "Flagship divergence activation: 'The Timeline vs. The Money.' Set up tailgate/campus activation content in Columbus and Big Ten watch bars asking fans why they doubt a 77.5% favorite.",
+      "evidence_posts": [
+        {
+          "author": "WolverineCorner",
+          "url": "https://x.com/WolverineCorner/status/2125351891408187463",
+          "created_at": "2026-11-24T22:12:32Z",
+          "likes": 70,
+          "impressions": 1910,
+          "text": "It's hard to imagine any scenario where Michigan doesn't beat Ohio State on Saturday.",
+          "lean": "A"
+        },
+        {
+          "author": "Buckeyerose2025",
+          "url": "https://x.com/Buckeyerose2025/status/2124664721747952055",
+          "created_at": "2026-11-23T00:41:58Z",
+          "likes": 1,
+          "impressions": 55,
+          "text": "The Ohio State Buckeyes and Michigan Wolverines have been rivals since October 16, 1897! Go Bucks!",
+          "lean": "B"
+        },
+        {
+          "author": "OSUUnleashed",
+          "url": "https://x.com/OSUUnleashed/status/2125273375404900629",
+          "created_at": "2026-11-24T17:00:33Z",
+          "likes": 1,
+          "impressions": 243,
+          "text": "The amount of Ohio State fans I'm seeing pick TTUN to win this weekend and the spread still being Ohio State -10.5 is a little reassuring",
+          "lean": "A"
+        }
+      ]
+    },
+    {
+      "id": "KXNFLMVP-27",
+      "category": "Futures",
+      "tag": "NFL FUTURES \u00b7 $50.1M VOL",
+      "title": "2026 NFL MVP Race",
+      "subtitle": "Head-to-Head Focus: Brock Purdy vs. Joe Burrow",
+      "kalshi_url": "https://kalshi.com/events/KXNFLMVP-27",
+      "side_a": {
+        "label": "Brock Purdy",
+        "short": "PURDY",
+        "kalshi_raw_cents": 39.5,
+        "kalshi_h2h_pct": 52.0,
+        "x_posts_7d": 7898,
+        "x_buzz_pct": 42.1,
+        "x_sentiment_votes": 4,
+        "x_sentiment_pct": 44.4,
+        "x_crowd_pct": 43.2,
+        "kalshi_vol_share_pct": 49.9,
+        "daily_series": [
+          23,
+          412,
+          405,
+          331,
+          235,
+          428,
+          4014,
+          2050
+        ]
+      },
+      "side_b": {
+        "label": "Joe Burrow",
+        "short": "BURROW",
+        "kalshi_raw_cents": 36.5,
+        "kalshi_h2h_pct": 48.0,
+        "x_posts_7d": 10881,
+        "x_buzz_pct": 57.9,
+        "x_sentiment_votes": 5,
+        "x_sentiment_pct": 55.6,
+        "x_crowd_pct": 56.8,
+        "kalshi_vol_share_pct": 50.1,
+        "daily_series": [
+          48,
+          1032,
+          737,
+          572,
+          570,
+          612,
+          2430,
+          4880
+        ]
+      },
+      "is_multi_outcome": true,
+      "total_contracts": 50122616,
+      "vol_24h_contracts": 868546,
+      "x_total_7d": 18779,
+      "sample_posts_n": 12,
+      "sample_directional_n": 9,
+      "divergence_pp": -8.8,
+      "abs_divergence_pp": 8.8,
+      "regime": "MODERATE SPLIT",
+      "divergence_summary": "Crowd +8.8 pp on BURROW",
+      "headline": "Purdy just overtook Burrow on Kalshi (39.5c vs 36.5c; 52.0% H2H) after Burrow's MNF loss, yet X volume (57.9% Burrow) and MVP debate threads still lean heavily toward Burrow.",
+      "story_bullets": [
+        "KalshiSports broke the flip on Nov 24 at 9:31 AM CT (135k+ views): Purdy surged ahead after 49ers hit 9-1 and Cincinnati fell 22-20 to Washington.",
+        "Bengals fans and neutral NFL accounts overwhelmingly argue Burrow is 'more valuable' to a weaker roster, keeping X sentiment ~64% Burrow in head-to-head debate.",
+        "Massive $50.1M contract volume ($868.5k in 24h) makes MVP the sharpest real-time narrative market on Kalshi."
+      ],
+      "activation_angle": "Turn live QB prime-time performances into dynamic MVP ticker graphics for sports podcasts and creator partners; narrative lag between X sentiment and live market repricing creates instant debate fuel.",
+      "evidence_posts": [
+        {
+          "author": "NinersTalk49",
+          "url": "https://x.com/NinersTalk49/status/2116279792026653034",
+          "created_at": "2026-10-30T21:23:15Z",
+          "likes": 1,
+          "impressions": 163,
+          "text": "Brock Purdy is top 3 in PFF's MVP rankings, alongside Josh Allen and Joe Burrow. He leads all QBs in positive EPA rate (56.8%)",
+          "lean": "A"
+        },
+        {
+          "author": "Lobs_All_Day",
+          "url": "https://x.com/Lobs_All_Day/status/2122883086421774485",
+          "created_at": "2026-11-18T02:42:23Z",
+          "likes": 291,
+          "impressions": 66214,
+          "text": "Joe Burrow is going to end up winning MVP, and its not just because of Jamar Chase, Tee Higgins, good o line, and a cupcake schedule... unlike for Brock Purdy",
+          "lean": "B"
+        },
+        {
+          "author": "MrBiggZ504",
+          "url": "https://x.com/MrBiggZ504/status/2122106699771240797",
+          "created_at": "2026-11-15T23:17:18Z",
+          "likes": 0,
+          "impressions": 226,
+          "text": "Brock Purdy is who everyone thinks Joe Burrow is. #49ers #Bengals #MVP",
+          "lean": "A"
+        }
+      ]
+    },
+    {
+      "id": "KXHEISMAN-27",
+      "category": "Futures",
+      "tag": "CFB FUTURES \u00b7 $49.8M VOL",
+      "title": "2026 Heisman Trophy",
+      "subtitle": "Frontrunner vs. Top Challengers (Smith vs. Dampier & Mensah)",
+      "kalshi_url": "https://kalshi.com/events/KXHEISMAN-27",
+      "side_a": {
+        "label": "Jeremiah Smith",
+        "short": "SMITH",
+        "kalshi_raw_cents": 79.5,
+        "kalshi_h2h_pct": 80.7,
+        "x_posts_7d": 1089,
+        "x_buzz_pct": 72.6,
+        "x_sentiment_votes": 4,
+        "x_sentiment_pct": 44.4,
+        "x_crowd_pct": 58.5,
+        "kalshi_vol_share_pct": 41.1,
+        "daily_series": [
+          3,
+          44,
+          47,
+          39,
+          590,
+          197,
+          94,
+          75
+        ]
+      },
+      "side_b": {
+        "label": "Dampier & Mensah",
+        "short": "FIELD",
+        "kalshi_raw_cents": 19.0,
+        "kalshi_h2h_pct": 19.3,
+        "x_posts_7d": 411,
+        "x_buzz_pct": 27.4,
+        "x_sentiment_votes": 5,
+        "x_sentiment_pct": 55.6,
+        "x_crowd_pct": 41.5,
+        "kalshi_vol_share_pct": 58.9,
+        "daily_series": [
+          1,
+          28,
+          18,
+          27,
+          34,
+          180,
+          68,
+          55
+        ]
+      },
+      "is_multi_outcome": true,
+      "total_contracts": 49756207,
+      "vol_24h_contracts": 428650,
+      "x_total_7d": 1500,
+      "sample_posts_n": 10,
+      "sample_directional_n": 9,
+      "divergence_pp": -22.2,
+      "abs_divergence_pp": 22.2,
+      "regime": "HIGH DIVERGENCE",
+      "divergence_summary": "Crowd +22.2 pp on FIELD",
+      "headline": "Strong consensus on Ohio State WR Jeremiah Smith (79.5c on Kalshi; 80.7% H2H vs top 2 QBs), though undefeated Utah QB Devon Dampier draws vocal underdog support.",
+      "story_bullets": [
+        "Jeremiah Smith commands 72.6% of top-contender X volume (1,089 posts) and holds ~80% implied odds on Kalshi ($49.8M total market volume).",
+        "Contrarian CFB analysts argue 10-0 Utah's Devon Dampier deserves the award over a 7-4 Ohio State receiver, sparking lively debate before rivalry Saturday.",
+        "If Michigan upsets Ohio State on Nov 28, both The Game and Heisman markets will reprice simultaneously."
+      ],
+      "activation_angle": "Pair The Game (Michigan-OSU) with live Heisman odds tracking: every Jeremiah Smith touchdown or stop in Columbus moves a $50M awards market in real time.",
+      "evidence_posts": [
+        {
+          "author": "UnderdogCFB",
+          "url": "https://x.com/UnderdogCFB/status/2123446428076830798",
+          "created_at": "2026-11-19T16:00:54Z",
+          "likes": 43,
+          "impressions": 8467,
+          "text": "Current Heisman Favorites, via Underdog: Jeremiah Smith (63%), Darian Mensah (16%), Devon Dampier (11%)",
+          "lean": "A"
+        },
+        {
+          "author": "dennisdoddcbs",
+          "url": "https://x.com/dennisdoddcbs/status/2123486951802016102",
+          "created_at": "2026-11-19T18:41:56Z",
+          "likes": 663,
+          "impressions": 41492,
+          "text": "Week 11 Heisman Hype: 1 Devon Dampier, Utah; 2 Aiden Flora, Iowa State; 3 Jeremiah Smith, ohio st; 5 Darian Mensah, Miami",
+          "lean": "B"
+        },
+        {
+          "author": "MikeDury",
+          "url": "https://x.com/MikeDury/status/2124130547010314711",
+          "created_at": "2026-11-21T13:19:21Z",
+          "likes": 2,
+          "impressions": 196,
+          "text": "Here is my Heisman top five: 1.) Jeremiah Smith (Ohio State), 2.) Devon Dampier (Utah), 3.) Darian Mensah (Miami)",
+          "lean": "A"
+        }
+      ]
+    },
+    {
+      "id": "KXOSCARPIC-27",
+      "category": "Culture",
+      "tag": "CULTURE \u00b7 99TH OSCARS \u00b7 $13.8M VOL",
+      "title": "Oscars Best Picture",
+      "subtitle": "The Odyssey vs. You Can See Everything & Dune: Part Three",
+      "kalshi_url": "https://kalshi.com/events/KXOSCARPIC-27",
+      "side_a": {
+        "label": "The Odyssey",
+        "short": "ODYSSEY",
+        "kalshi_raw_cents": 52.5,
+        "kalshi_h2h_pct": 61.4,
+        "x_posts_7d": 2396,
+        "x_buzz_pct": 72.0,
+        "x_sentiment_votes": 5,
+        "x_sentiment_pct": 71.4,
+        "x_crowd_pct": 71.7,
+        "kalshi_vol_share_pct": 48.8,
+        "daily_series": [
+          25,
+          459,
+          409,
+          315,
+          325,
+          319,
+          275,
+          269
+        ]
+      },
+      "side_b": {
+        "label": "YCSE & Dune 3",
+        "short": "FIELD",
+        "kalshi_raw_cents": 33.0,
+        "kalshi_h2h_pct": 38.6,
+        "x_posts_7d": 934,
+        "x_buzz_pct": 28.0,
+        "x_sentiment_votes": 2,
+        "x_sentiment_pct": 28.6,
+        "x_crowd_pct": 28.3,
+        "kalshi_vol_share_pct": 51.2,
+        "daily_series": [
+          10,
+          149,
+          72,
+          76,
+          157,
+          89,
+          162,
+          219
+        ]
+      },
+      "is_multi_outcome": true,
+      "total_contracts": 13804195,
+      "vol_24h_contracts": 56919,
+      "x_total_7d": 3330,
+      "sample_posts_n": 10,
+      "sample_directional_n": 7,
+      "divergence_pp": 10.3,
+      "abs_divergence_pp": 10.3,
+      "regime": "MODERATE SPLIT",
+      "divergence_summary": "Crowd +10.3 pp on ODYSSEY",
+      "headline": "Christopher Nolan's The Odyssey leads both Kalshi (52.5c; 61.4% H2H) and Film Twitter buzz (71.9% vs. Dune/YCSE), while Nathan Fielder's You Can See Everything is surging on Nov 24.",
+      "story_bullets": [
+        "Market and Film Twitter agree on the frontrunner: Nolan's The Odyssey sits around 53% on Kalshi and tops critics' early Oscar ballots.",
+        "Fastest riser on X: A24's You Can See Everything (23.5c) grew from 43 daily posts a week ago to 157 posts on Nov 24, alongside Dune: Part Three (9.5c) teaser buzz.",
+        "Demonstrates how prediction markets quantify non-sports cultural momentum months before awards night."
+      ],
+      "activation_angle": "Culture-first Kalshi activation: partner with indie theaters, film festivals, and awards podcasts (similar to a Miami Art Week / screening room activation) with live 'Best Picture Stock Exchange' boards.",
+      "evidence_posts": [
+        {
+          "author": "itsdougjam",
+          "url": "https://x.com/itsdougjam/status/2116817532665680224",
+          "created_at": "2026-11-01T09:00:03Z",
+          "likes": 70,
+          "impressions": 10151,
+          "text": "Best Picture Oscars predictions: 1. The Odyssey, 2. La Bola Negra, 6. Dune: Part Three, 10. You Can See Everything",
+          "lean": "A"
+        },
+        {
+          "author": "therogercalvo",
+          "url": "https://x.com/therogercalvo/status/2118745429923750136",
+          "created_at": "2026-11-06T16:40:49Z",
+          "likes": 9,
+          "impressions": 1440,
+          "text": "Oscar 2027 Predictions Best Picture: 1. LA BOLA NEGRA, 2. THE ODYSSEY, 3. YOU CAN SEE EVERYTHING, 9. DUNE: PART THREE",
+          "lean": "B"
+        },
+        {
+          "author": "ifureJack",
+          "url": "https://x.com/ifureJack/status/2125128018989310125",
+          "created_at": "2026-11-24T07:22:57Z",
+          "likes": 9,
+          "impressions": 258,
+          "text": "The market chart puts The Odyssey in front at roughly 53%, with You Can See Everything trailing around 23%. My early pick? The Odyssey.",
+          "lean": "A"
+        }
+      ]
+    }
+  ]
+}
