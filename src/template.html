@@ -1,0 +1,1245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Fan Pulse | X Crowd Sentiment vs. Kalshi Market Odds</title>
+  <meta name="description" content="Independent tracker comparing 7-day X fan buzz and sentiment against live Kalshi prediction-market odds across Thanksgiving sports and culture events." />
+  <style>
+    @font-face {
+      font-family: 'Archivo';
+      font-style: normal;
+      font-weight: 400 700;
+      font-display: swap;
+      src: url('__FONT_ARCHIVO__') format('woff2');
+    }
+    @font-face {
+      font-family: 'Archivo Black';
+      font-style: normal;
+      font-weight: 400;
+      font-display: swap;
+      src: url('__FONT_ARCHIVO_BLACK__') format('woff2');
+    }
+    @font-face {
+      font-family: 'DM Mono';
+      font-style: normal;
+      font-weight: 400 500;
+      font-display: swap;
+      src: url('__FONT_DMMONO__') format('woff2');
+    }
+
+    :root {
+      --bg: #0a0a0a;
+      --surface: #121212;
+      --surface-2: #181818;
+      --surface-3: #202020;
+      --border: #272727;
+      --border-hi: #3a3a3a;
+      --text: #F1F1EA;
+      --muted: #9A9E94;
+      --dim: #666B62;
+      --lime: #C8FF2E;
+      --lime-dim: rgba(200, 255, 46, 0.14);
+      --cyan: #38BDF8;
+      --cyan-dim: rgba(56, 189, 248, 0.14);
+      --coral: #FF6B4A;
+      --coral-dim: rgba(255, 107, 74, 0.16);
+      --amber: #FBBF24;
+      --amber-dim: rgba(251, 191, 36, 0.14);
+      --font-display: 'Archivo Black', sans-serif;
+      --font-body: 'Archivo', -apple-system, BlinkMacSystemFont, sans-serif;
+      --font-mono: 'DM Mono', ui-monospace, SFMono-Regular, monospace;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; background: var(--bg); color: var(--text); }
+    body {
+      font-family: var(--font-body);
+      background:
+        radial-gradient(900px 500px at 85% -10%, rgba(200, 255, 46, 0.07), transparent 60%),
+        radial-gradient(700px 420px at 10% 10%, rgba(56, 189, 248, 0.06), transparent 60%),
+        var(--bg);
+      color: var(--text);
+      line-height: 1.5;
+      -webkit-font-smoothing: antialiased;
+      overflow-x: hidden;
+    }
+
+    a { color: inherit; text-decoration: none; }
+    .wrap { max-width: 1220px; margin: 0 auto; padding: 0 20px; }
+
+    /* Top Bar */
+    .topbar {
+      position: sticky;
+      top: 0;
+      z-index: 40;
+      background: rgba(10, 10, 10, 0.88);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border);
+    }
+    .topbar-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      padding: 12px 20px;
+      max-width: 1220px;
+      margin: 0 auto;
+      flex-wrap: wrap;
+    }
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+    .brand-mark {
+      font-family: var(--font-display);
+      font-size: 15px;
+      letter-spacing: 0.04em;
+      color: var(--lime);
+    }
+    .brand-tag {
+      font-family: var(--font-mono);
+      font-size: 11px;
+      color: var(--muted);
+      border: 1px solid var(--border-hi);
+      padding: 2px 8px;
+      border-radius: 4px;
+    }
+    .top-links {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+    .pill-link {
+      font-family: var(--font-mono);
+      font-size: 11px;
+      padding: 6px 10px;
+      border-radius: 6px;
+      border: 1px solid var(--border-hi);
+      background: var(--surface);
+      color: var(--text);
+      transition: border-color 0.15s, color 0.15s;
+    }
+    .pill-link:hover { border-color: var(--lime); color: var(--lime); }
+    .pill-link.accent {
+      background: var(--lime);
+      color: #0a0a0a;
+      border-color: var(--lime);
+      font-weight: 500;
+    }
+    .pill-link.accent:hover { opacity: 0.9; color: #0a0a0a; }
+
+    /* Hero */
+    .hero { padding: 48px 0 32px; border-bottom: 1px solid var(--border); }
+    .eyebrow {
+      font-family: var(--font-mono);
+      font-size: 11px;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--lime);
+      margin-bottom: 14px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      flex-wrap: wrap;
+    }
+    .live-dot {
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: var(--lime);
+      box-shadow: 0 0 10px var(--lime);
+      display: inline-block;
+    }
+    h1 {
+      font-family: var(--font-display);
+      font-size: clamp(32px, 5.4vw, 60px);
+      line-height: 0.98;
+      letter-spacing: -0.02em;
+      text-transform: uppercase;
+      max-width: 940px;
+      margin-bottom: 16px;
+    }
+    h1 .hi-lime { color: var(--lime); }
+    h1 .hi-cyan { color: var(--cyan); }
+    .hero-sub {
+      font-size: 17px;
+      color: var(--muted);
+      max-width: 780px;
+      margin-bottom: 20px;
+    }
+    .timestamp-bar {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-bottom: 28px;
+    }
+    .ts-chip {
+      font-family: var(--font-mono);
+      font-size: 12px;
+      color: var(--text);
+      background: var(--surface);
+      border: 1px solid var(--border);
+      padding: 6px 12px;
+      border-radius: 6px;
+    }
+    .ts-chip span { color: var(--muted); }
+
+    .kpi-grid {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 12px;
+    }
+    .kpi {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 16px 18px;
+    }
+    .kpi-label {
+      font-family: var(--font-mono);
+      font-size: 11px;
+      color: var(--muted);
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      margin-bottom: 6px;
+    }
+    .kpi-val {
+      font-family: var(--font-display);
+      font-size: clamp(22px, 2.8vw, 30px);
+      line-height: 1.05;
+      color: var(--text);
+    }
+    .kpi-val.lime { color: var(--lime); }
+    .kpi-val.cyan { color: var(--cyan); }
+    .kpi-val.coral { color: var(--coral); }
+    .kpi-note {
+      font-family: var(--font-mono);
+      font-size: 11px;
+      color: var(--dim);
+      margin-top: 4px;
+    }
+
+    /* Section Headings */
+    section { padding: 40px 0; border-bottom: 1px solid var(--border); }
+    .sec-head {
+      display: flex;
+      align-items: flex-end;
+      justify-content: space-between;
+      gap: 16px;
+      flex-wrap: wrap;
+      margin-bottom: 22px;
+    }
+    .sec-kicker {
+      font-family: var(--font-mono);
+      font-size: 11px;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--lime);
+      margin-bottom: 6px;
+    }
+    h2 {
+      font-family: var(--font-display);
+      font-size: clamp(22px, 3vw, 32px);
+      text-transform: uppercase;
+      line-height: 1.05;
+    }
+    .legend {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      font-family: var(--font-mono);
+      font-size: 12px;
+      color: var(--muted);
+      flex-wrap: wrap;
+    }
+    .dot-lime, .dot-cyan, .dot-coral {
+      width: 10px; height: 10px; border-radius: 2px; display: inline-block; margin-right: 6px;
+    }
+    .dot-lime { background: var(--lime); }
+    .dot-cyan { background: var(--cyan); }
+    .dot-coral { background: var(--coral); }
+
+    /* Spotlight Top 3 */
+    .spotlight-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 14px;
+    }
+    .spot-card {
+      background: linear-gradient(180deg, var(--surface-2) 0%, var(--surface) 100%);
+      border: 1px solid var(--border-hi);
+      border-radius: 12px;
+      padding: 18px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      gap: 14px;
+      transition: transform 0.15s, border-color 0.15s;
+      cursor: pointer;
+    }
+    .spot-card:hover { transform: translateY(-2px); border-color: var(--lime); }
+    .spot-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 8px;
+    }
+    .spot-rank {
+      font-family: var(--font-mono);
+      font-size: 11px;
+      color: var(--coral);
+      background: var(--coral-dim);
+      padding: 3px 8px;
+      border-radius: 4px;
+      font-weight: 500;
+    }
+    .spot-gap {
+      font-family: var(--font-mono);
+      font-size: 13px;
+      color: var(--text);
+      font-weight: 500;
+    }
+    .spot-title {
+      font-family: var(--font-display);
+      font-size: 20px;
+      line-height: 1.1;
+      text-transform: uppercase;
+    }
+    .spot-split {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 8px;
+      background: var(--bg);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 10px;
+    }
+    .split-box-lbl {
+      font-family: var(--font-mono);
+      font-size: 10px;
+      color: var(--muted);
+      text-transform: uppercase;
+      margin-bottom: 2px;
+    }
+    .split-box-val {
+      font-family: var(--font-mono);
+      font-size: 14px;
+      font-weight: 500;
+    }
+    .split-box-val.lime { color: var(--lime); }
+    .split-box-val.cyan { color: var(--cyan); }
+    .spot-copy {
+      font-size: 13px;
+      color: var(--muted);
+      line-height: 1.45;
+    }
+
+    /* Divergence Gap Chart */
+    .gap-board {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 16px 18px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+    .gap-row {
+      display: grid;
+      grid-template-columns: 210px 1fr 130px;
+      align-items: center;
+      gap: 14px;
+      padding: 8px 10px;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background 0.12s;
+    }
+    .gap-row:hover { background: var(--surface-2); }
+    .gap-name {
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--text);
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+    .gap-sub {
+      font-family: var(--font-mono);
+      font-size: 11px;
+      color: var(--dim);
+    }
+    .gap-track {
+      position: relative;
+      height: 24px;
+      background: var(--bg);
+      border: 1px solid var(--border);
+      border-radius: 999px;
+      overflow: hidden;
+    }
+    .gap-midline {
+      position: absolute;
+      left: 50%;
+      top: 0;
+      bottom: 0;
+      width: 1px;
+      background: var(--border-hi);
+      z-index: 1;
+    }
+    .gap-connector {
+      position: absolute;
+      top: 10px;
+      height: 4px;
+      background: linear-gradient(90deg, var(--lime), var(--cyan));
+      opacity: 0.75;
+      z-index: 2;
+    }
+    .gap-dot {
+      position: absolute;
+      top: 5px;
+      width: 14px;
+      height: 14px;
+      border-radius: 50%;
+      transform: translateX(-50%);
+      z-index: 3;
+      border: 2px solid var(--bg);
+    }
+    .gap-dot.kalshi { background: var(--lime); }
+    .gap-dot.crowd { background: var(--cyan); }
+    .gap-val {
+      text-align: right;
+      font-family: var(--font-mono);
+      font-size: 12px;
+      font-weight: 500;
+    }
+
+    /* Filter Bar */
+    .controls {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      flex-wrap: wrap;
+      margin-bottom: 20px;
+    }
+    .filter-pills {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+    }
+    .filter-btn {
+      font-family: var(--font-mono);
+      font-size: 12px;
+      padding: 7px 12px;
+      border-radius: 6px;
+      border: 1px solid var(--border-hi);
+      background: var(--surface);
+      color: var(--muted);
+      cursor: pointer;
+      transition: all 0.15s;
+    }
+    .filter-btn:hover { color: var(--text); border-color: var(--text); }
+    .filter-btn.active {
+      background: var(--lime);
+      color: #0a0a0a;
+      border-color: var(--lime);
+      font-weight: 500;
+    }
+    .sort-select {
+      font-family: var(--font-mono);
+      font-size: 12px;
+      padding: 7px 12px;
+      border-radius: 6px;
+      border: 1px solid var(--border-hi);
+      background: var(--surface);
+      color: var(--text);
+      cursor: pointer;
+    }
+
+    /* Event Cards */
+    .cards-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 16px;
+    }
+    .ev-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+      transition: border-color 0.2s;
+    }
+    .ev-card.highlight { border-color: var(--lime); box-shadow: 0 0 0 1px var(--lime); }
+    .ev-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 10px;
+    }
+    .ev-tag {
+      font-family: var(--font-mono);
+      font-size: 11px;
+      color: var(--muted);
+      letter-spacing: 0.06em;
+    }
+    .badge {
+      font-family: var(--font-mono);
+      font-size: 11px;
+      padding: 3px 8px;
+      border-radius: 4px;
+      font-weight: 500;
+      white-space: nowrap;
+    }
+    .badge.high { background: var(--coral-dim); color: var(--coral); border: 1px solid rgba(255,107,74,0.35); }
+    .badge.mod { background: var(--amber-dim); color: var(--amber); border: 1px solid rgba(251,191,36,0.35); }
+    .badge.cons { background: var(--lime-dim); color: var(--lime); border: 1px solid rgba(200,255,46,0.3); }
+
+    .ev-title {
+      font-family: var(--font-display);
+      font-size: 22px;
+      line-height: 1.08;
+      text-transform: uppercase;
+      margin-top: 4px;
+    }
+    .ev-sub {
+      font-family: var(--font-mono);
+      font-size: 12px;
+      color: var(--muted);
+      margin-top: 3px;
+    }
+
+    /* Comparison Bars */
+    .bars-box {
+      background: var(--bg);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 14px;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+    .sides-hdr {
+      display: flex;
+      justify-content: space-between;
+      font-size: 13px;
+      font-weight: 600;
+      gap: 8px;
+    }
+    .bar-group-lbl {
+      display: flex;
+      justify-content: space-between;
+      font-family: var(--font-mono);
+      font-size: 11px;
+      margin-bottom: 5px;
+      color: var(--muted);
+    }
+    .bar-group-lbl strong.lime { color: var(--lime); }
+    .bar-group-lbl strong.cyan { color: var(--cyan); }
+    .dual-bar {
+      height: 12px;
+      background: var(--surface-3);
+      border-radius: 999px;
+      overflow: hidden;
+      display: flex;
+    }
+    .dual-fill-a.lime { background: var(--lime); }
+    .dual-fill-a.cyan { background: var(--cyan); }
+    .dual-fill-b { background: #2c2f36; flex: 1; }
+
+    .metrics-strip {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 8px;
+      padding-top: 4px;
+      border-top: 1px dashed var(--border);
+    }
+    .m-item {
+      font-family: var(--font-mono);
+      font-size: 11px;
+      color: var(--muted);
+    }
+    .m-item b {
+      display: block;
+      font-size: 12px;
+      color: var(--text);
+      font-weight: 500;
+      margin-top: 2px;
+    }
+
+    .spark-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      padding: 8px 10px;
+      background: var(--surface-2);
+      border-radius: 8px;
+    }
+    .spark-meta {
+      font-family: var(--font-mono);
+      font-size: 11px;
+      color: var(--muted);
+      line-height: 1.4;
+    }
+    .spark-meta strong { color: var(--text); }
+
+    .ev-headline {
+      font-size: 14px;
+      color: var(--text);
+      line-height: 1.5;
+    }
+
+    /* Expandable Details */
+    details.ev-details {
+      border-top: 1px solid var(--border);
+      padding-top: 10px;
+    }
+    details.ev-details summary {
+      font-family: var(--font-mono);
+      font-size: 12px;
+      color: var(--lime);
+      cursor: pointer;
+      list-style: none;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      user-select: none;
+    }
+    details.ev-details summary::-webkit-details-marker { display: none; }
+    .details-body {
+      margin-top: 12px;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+    .bullet-list {
+      padding-left: 16px;
+      font-size: 13px;
+      color: var(--muted);
+      display: flex;
+      flex-direction: column;
+      gap: 5px;
+    }
+    .activation-callout {
+      background: var(--lime-dim);
+      border-left: 3px solid var(--lime);
+      padding: 10px 12px;
+      border-radius: 0 8px 8px 0;
+      font-size: 13px;
+      color: var(--text);
+    }
+    .activation-callout strong {
+      display: block;
+      font-family: var(--font-mono);
+      font-size: 11px;
+      color: var(--lime);
+      text-transform: uppercase;
+      margin-bottom: 4px;
+      letter-spacing: 0.06em;
+    }
+    .posts-stack {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+    .x-post {
+      background: var(--bg);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 10px 12px;
+      font-size: 12.5px;
+      color: var(--muted);
+      display: block;
+      transition: border-color 0.15s;
+    }
+    .x-post:hover { border-color: var(--cyan); }
+    .x-post-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-family: var(--font-mono);
+      font-size: 11px;
+      margin-bottom: 4px;
+      color: var(--text);
+    }
+    .lean-pill {
+      font-size: 10px;
+      padding: 1px 6px;
+      border-radius: 4px;
+      border: 1px solid var(--border-hi);
+      color: var(--cyan);
+    }
+    .card-footer-links {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-family: var(--font-mono);
+      font-size: 11px;
+      color: var(--muted);
+      padding-top: 4px;
+    }
+    .card-footer-links a { color: var(--lime); }
+    .card-footer-links a:hover { text-decoration: underline; }
+
+    /* Activations Playbook Section */
+    .playbook-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 14px;
+    }
+    .play-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+    .play-num {
+      font-family: var(--font-mono);
+      font-size: 11px;
+      color: var(--lime);
+      letter-spacing: 0.08em;
+    }
+    .play-title {
+      font-family: var(--font-display);
+      font-size: 19px;
+      text-transform: uppercase;
+      line-height: 1.1;
+    }
+    .play-copy {
+      font-size: 14px;
+      color: var(--muted);
+      line-height: 1.55;
+    }
+
+    /* Methodology */
+    .method-grid {
+      display: grid;
+      grid-template-columns: 1.3fr 1fr;
+      gap: 16px;
+    }
+    .method-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 20px;
+      font-size: 14px;
+      color: var(--muted);
+      line-height: 1.6;
+    }
+    .method-card h3 {
+      font-family: var(--font-mono);
+      font-size: 12px;
+      text-transform: uppercase;
+      color: var(--text);
+      letter-spacing: 0.08em;
+      margin-bottom: 10px;
+    }
+    .method-card ul {
+      padding-left: 18px;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+    .code-formula {
+      font-family: var(--font-mono);
+      font-size: 12px;
+      background: var(--bg);
+      border: 1px solid var(--border);
+      padding: 10px 12px;
+      border-radius: 8px;
+      color: var(--lime);
+      margin: 12px 0;
+      overflow-x: auto;
+    }
+
+    /* Footer */
+    footer {
+      padding: 36px 0 48px;
+      color: var(--muted);
+      font-size: 13px;
+    }
+    .foot-inner {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+    .foot-links {
+      display: flex;
+      gap: 14px;
+      flex-wrap: wrap;
+      font-family: var(--font-mono);
+      font-size: 12px;
+    }
+    .foot-links a { color: var(--lime); }
+    .foot-links a:hover { text-decoration: underline; }
+    .disclaimer {
+      margin-top: 14px;
+      font-family: var(--font-mono);
+      font-size: 11px;
+      color: var(--dim);
+    }
+
+    /* Responsive */
+    @media (max-width: 960px) {
+      .kpi-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      .spotlight-grid, .playbook-grid, .cards-grid, .method-grid { grid-template-columns: 1fr; }
+      .gap-row { grid-template-columns: 150px 1fr 105px; gap: 10px; }
+    }
+    @media (max-width: 600px) {
+      .wrap { padding: 0 14px; }
+      .hero { padding: 32px 0 24px; }
+      .gap-row { grid-template-columns: 1fr; gap: 6px; }
+      .gap-val { text-align: left; }
+      .metrics-strip { grid-template-columns: 1fr 1fr; }
+      .topbar-inner { padding: 10px 14px; }
+    }
+  </style>
+</head>
+<body>
+  <header class="topbar">
+    <div class="topbar-inner">
+      <div class="brand">
+        <span class="brand-mark">FAN PULSE // CROWD VS. MONEY</span>
+        <span class="brand-tag">INDEPENDENT PROJECT · NOT AFFILIATED WITH KALSHI</span>
+      </div>
+      <nav class="top-links">
+        <a class="pill-link" href="#activations">Activations</a>
+        <a class="pill-link" href="#methodology">Methodology</a>
+        <a class="pill-link" href="https://www.linkedin.com/in/virginia-s-66202b189" target="_blank" rel="noopener">LinkedIn</a>
+        <a class="pill-link accent" href="https://thevc3477.github.io/kalshi-activations/" target="_blank" rel="noopener">Activations Pitch Site</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <section class="hero">
+      <div class="eyebrow">
+        <span class="live-dot"></span>
+        BUILT BY VIRGINIA SHIPP · ENGINEER AT A TRADING FIRM &amp; FOUNDER OF VINYL COLLECTIV
+      </div>
+      <h1>WHERE THE <span class="hi-cyan">TIMELINE</span> DISAGREES WITH THE <span class="hi-lime">ORDERBOOK</span>.</h1>
+      <p class="hero-sub">
+        Live comparison of 7-day X fan conversation and sentiment against real-money Kalshi prediction-market probabilities across 10 Thanksgiving Week sports and culture markets, built to pinpoint where partnership activations earn maximum attention.
+      </p>
+      <div class="timestamp-bar" id="timestamps"></div>
+      <div class="kpi-grid" id="kpi-grid"></div>
+    </section>
+
+    <section id="divergences">
+      <div class="sec-head">
+        <div>
+          <div class="sec-kicker">HEADLINE SIGNAL</div>
+          <h2>Top 3 Crowd vs. Market Divergences</h2>
+        </div>
+        <div class="legend">
+          <span><i class="dot-lime"></i>Kalshi Market Odds</span>
+          <span><i class="dot-cyan"></i>X Crowd Signal</span>
+          <span><i class="dot-coral"></i>Gap (Percentage Points)</span>
+        </div>
+      </div>
+      <div class="spotlight-grid" id="spotlight-grid"></div>
+    </section>
+
+    <section id="matrix">
+      <div class="sec-head">
+        <div>
+          <div class="sec-kicker">ALL 10 TRACKED EVENTS</div>
+          <h2>Divergence Ladder (Side A Win / Leader Share)</h2>
+        </div>
+        <div class="legend">
+          <span>Click any row to jump to its card and X evidence</span>
+        </div>
+      </div>
+      <div class="gap-board" id="gap-board"></div>
+    </section>
+
+    <section id="markets">
+      <div class="sec-head">
+        <div>
+          <div class="sec-kicker">LIVE MARKETS &amp; X EVIDENCE</div>
+          <h2>Event-by-Event Breakdown</h2>
+        </div>
+      </div>
+      <div class="controls">
+        <div class="filter-pills" id="filter-pills">
+          <button class="filter-btn active" data-cat="ALL">ALL (10)</button>
+          <button class="filter-btn" data-cat="NFL">NFL THANKSGIVING (4)</button>
+          <button class="filter-btn" data-cat="CFB">CFB RIVALRY (2)</button>
+          <button class="filter-btn" data-cat="NBA">NBA (1)</button>
+          <button class="filter-btn" data-cat="Futures">FUTURES (2)</button>
+          <button class="filter-btn" data-cat="Culture">CULTURE (1)</button>
+        </div>
+        <select class="sort-select" id="sort-select" aria-label="Sort events">
+          <option value="div">Sort: Largest Divergence (pp)</option>
+          <option value="xvol">Sort: Highest 7d X Volume</option>
+          <option value="kvol">Sort: Highest Kalshi Volume</option>
+        </select>
+      </div>
+      <div class="cards-grid" id="cards-grid"></div>
+    </section>
+
+    <section id="activations">
+      <div class="sec-head">
+        <div>
+          <div class="sec-kicker">PARTNERSHIP ACTIVATIONS STRATEGY</div>
+          <h2>What Divergence Means for Brand &amp; League Activations</h2>
+        </div>
+      </div>
+      <div class="playbook-grid">
+        <div class="play-card">
+          <div class="play-num">01 / HIGH DIVERGENCE (&gt; 12 PP)</div>
+          <div class="play-title">Debate Fuel &amp; Campus / Bar Triggers</div>
+          <p class="play-copy">
+            When X conviction runs 20 to 34 points away from Kalshi's orderbook (like Michigan at Ohio State or Philadelphia at Dallas), fans are already arguing in replies. Activate with "Timeline vs. Orderbook" live probability boards at tailgates, sports bars, and creator streams so the argument turns into measurable engagement.
+          </p>
+        </div>
+        <div class="play-card">
+          <div class="play-num">02 / HIGH BUZZ + TIGHT CONSENSUS (&lt; 5 PP)</div>
+          <div class="play-title">Culture &amp; Watch-Party Scale</div>
+          <p class="play-copy">
+            When the crowd and money agree on a massive slate (8-2 Bears at 8-2 Lions with 30,388 posts and Wu-Tang Clan at halftime, or Minneapolis fans launching the "Wolvesgiving" market for Wolves-OKC), partner directly with local cultural communities and halftime moments rather than forcing a hot take.
+          </p>
+        </div>
+        <div class="play-card">
+          <div class="play-num">03 / FUTURES &amp; AWARDS VELOCITY</div>
+          <div class="play-title">Real-Time Narrative Repricing</div>
+          <p class="play-copy">
+            In $50M awards markets like NFL MVP, Kalshi repriced Brock Purdy ahead of Joe Burrow hours after Monday Night Football while X volume still ran 58% Burrow. Non-sports markets like Best Picture (The Odyssey vs. surging You Can See Everything) unlock film festivals, podcasts, and culture partners year-round.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section id="methodology">
+      <div class="sec-head">
+        <div>
+          <div class="sec-kicker">TRANSPARENT METHODOLOGY</div>
+          <h2>How Every Number Is Computed</h2>
+        </div>
+      </div>
+      <div class="method-grid">
+        <div class="method-card">
+          <h3>Data Sources &amp; Scoring Pipeline</h3>
+          <ul>
+            <li><strong>Kalshi Market Odds:</strong> Fetched directly from Kalshi's public v2 API (<code>/trade-api/v2/events/{ticker}?with_nested_markets=true</code>). Mid-price is computed from live <code>yes_bid_dollars</code> and <code>yes_ask_dollars</code> and normalized head-to-head across the two compared contenders so percentages sum to 100% (raw multi-outcome contract prices in cents are shown alongside).</li>
+            <li><strong>7-Day X Buzz Share:</strong> Exact 7-day English non-retweet post counts per side via X's recent count endpoint (<code>-is:retweet lang:en</code>).</li>
+            <li><strong>Sampled Post Sentiment:</strong> Non-spam, non-ticket posts sampled per event are scored deterministically by a transparent rule-based lexicon in Python, excluding <code>@KalshiSports</code> market-news tweets and deduplicated to max 1 directional vote per unique X handle so reply-bots cannot skew the sample.</li>
+          </ul>
+          <div class="code-formula">Crowd % = 0.50 * (7d Buzz Share %) + 0.50 * (Deduplicated Sample Sentiment %)<br/>Divergence (pp) = Crowd % (Side A) - Kalshi H2H % (Side A)</div>
+        </div>
+        <div class="method-card">
+          <h3>Honest Caveats &amp; Refresh Cadence</h3>
+          <ul>
+            <li><strong>Snapshot vs. Live Odds:</strong> Kalshi odds can be refreshed anytime via <code>scripts/refresh_kalshi.py</code> (and scheduled via GitHub Actions). X post counts and sentiment remain pinned to the timestamped Nov 24, 2026 4:57 PM CT snapshot so X API limits are respected and every cited post stays verifiable.</li>
+            <li><strong>Known Limitations:</strong> Keyword/lexicon scoring on public English X posts captures directional buzz and narrative lean rather than full human sarcasm or private group chats; neutral/two-sided commentary is excluded from the directional denominator and reported transparently in <code>n</code>.</li>
+            <li><strong>Contract Volume Note:</strong> Kalshi contract volumes reflect $1 notional payout contracts traded across the market.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="wrap">
+    <div class="foot-inner">
+      <div>
+        <strong>Virginia Shipp</strong> · Engineer at a trading firm &amp; Founder of Vinyl Collectiv (Chicago, 10,000+ community members)
+        <p class="disclaimer">Independent showcase project, not affiliated with Kalshi. All market data sourced from Kalshi public API; all social counts and post samples sourced from X API.</p>
+      </div>
+      <div class="foot-links">
+        <a href="https://thevc3477.github.io/kalshi-activations/" target="_blank" rel="noopener">Kalshi Activations Pitch</a>
+        <a href="https://www.linkedin.com/in/virginia-s-66202b189" target="_blank" rel="noopener">LinkedIn</a>
+        <a href="https://github.com/thevc3477/fan-pulse" target="_blank" rel="noopener">GitHub Repo</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    const SNAPSHOT = __SNAPSHOT_JSON__;
+
+    const fmtNum = (n) => Number(n).toLocaleString('en-US');
+    const fmtDollars = (n) => {
+      if (n >= 1e6) return '$' + (n / 1e6).toFixed(2) + 'M';
+      if (n >= 1e3) return '$' + (n / 1e3).toFixed(1) + 'K';
+      return '$' + n;
+    };
+
+    function badgeClass(regime) {
+      if (regime === 'HIGH DIVERGENCE') return 'high';
+      if (regime === 'MODERATE SPLIT') return 'mod';
+      return 'cons';
+    }
+
+    function escapeHtml(s) {
+      return String(s)
+        .replace(/&/g, '&amp;')
+        .replace(/</g, '&lt;')
+        .replace(/>/g, '&gt;')
+        .replace(/"/g, '&quot;');
+    }
+
+    function renderSparkline(seriesA, seriesB) {
+      const w = 136, h = 34, pad = 3;
+      const all = [...seriesA, ...seriesB];
+      const max = Math.max(...all, 1);
+      const pts = (arr) => arr.map((v, i) => {
+        const x = pad + (i / Math.max(arr.length - 1, 1)) * (w - pad * 2);
+        const y = h - pad - (v / max) * (h - pad * 2);
+        return `${x.toFixed(1)},${y.toFixed(1)}`;
+      }).join(' ');
+      return `
+        <svg width="${w}" height="${h}" viewBox="0 0 ${w} ${h}" aria-label="7-day X daily volume sparkline">
+          <polyline fill="none" stroke="#38BDF8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" points="${pts(seriesA)}" />
+          <polyline fill="none" stroke="#8E9585" stroke-width="1.5" stroke-dasharray="2,2" stroke-linecap="round" stroke-linejoin="round" points="${pts(seriesB)}" />
+        </svg>
+      `;
+    }
+
+    function jumpToCard(id) {
+      const el = document.getElementById('card-' + id);
+      if (!el) return;
+      if (el.style.display === 'none') {
+        document.querySelector('.filter-btn[data-cat="ALL"]').click();
+      }
+      el.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      el.classList.add('highlight');
+      setTimeout(() => el.classList.remove('highlight'), 1800);
+    }
+
+    function renderHero() {
+      document.getElementById('timestamps').innerHTML = `
+        <div class="ts-chip"><span>KALSHI ODDS AS OF:</span> ${escapeHtml(SNAPSHOT.kalshi_updated_ct)}</div>
+        <div class="ts-chip"><span>X CROWD SNAPSHOT:</span> ${escapeHtml(SNAPSHOT.x_snapshot_ct)} (${escapeHtml(SNAPSHOT.x_window_label)})</div>
+      `;
+
+      const top = SNAPSHOT.top_divergences[0];
+      document.getElementById('kpi-grid').innerHTML = `
+        <div class="kpi">
+          <div class="kpi-label">Markets Tracked</div>
+          <div class="kpi-val lime">${SNAPSHOT.total_events}</div>
+          <div class="kpi-note">NFL · CFB · NBA · MVP · Heisman · Oscars</div>
+        </div>
+        <div class="kpi">
+          <div class="kpi-label">7-Day X Posts Measured</div>
+          <div class="kpi-val cyan">${fmtNum(SNAPSHOT.total_x_posts_7d)}</div>
+          <div class="kpi-note">Non-retweet English volume</div>
+        </div>
+        <div class="kpi">
+          <div class="kpi-label">Kalshi Contract Volume</div>
+          <div class="kpi-val">${fmtDollars(SNAPSHOT.total_kalshi_contracts)}</div>
+          <div class="kpi-note">$1 notional contracts across slate</div>
+        </div>
+        <div class="kpi">
+          <div class="kpi-label">Peak Divergence</div>
+          <div class="kpi-val coral">${top.abs_divergence_pp.toFixed(1)} pp</div>
+          <div class="kpi-note">${escapeHtml(top.title)}</div>
+        </div>
+      `;
+    }
+
+    function renderSpotlight() {
+      const top3 = [...SNAPSHOT.events]
+        .sort((a, b) => b.abs_divergence_pp - a.abs_divergence_pp)
+        .slice(0, 3);
+
+      document.getElementById('spotlight-grid').innerHTML = top3.map((ev, idx) => {
+        const crowdWinner = ev.side_a.x_crowd_pct >= 50 ? ev.side_a : ev.side_b;
+        const crowdPct = Math.max(ev.side_a.x_crowd_pct, ev.side_b.x_crowd_pct);
+        const mktFav = ev.side_a.kalshi_h2h_pct >= 50 ? ev.side_a : ev.side_b;
+        const mktPct = Math.max(ev.side_a.kalshi_h2h_pct, ev.side_b.kalshi_h2h_pct);
+        return `
+          <article class="spot-card" onclick="jumpToCard('${ev.id}')">
+            <div>
+              <div class="spot-top">
+                <span class="spot-rank">#${idx + 1} DIVERGENCE</span>
+                <span class="spot-gap">${escapeHtml(ev.divergence_summary)}</span>
+              </div>
+              <h3 class="spot-title" style="margin-top:10px;">${escapeHtml(ev.title)}</h3>
+            </div>
+            <div class="spot-split">
+              <div>
+                <div class="split-box-lbl">The Crowd Says</div>
+                <div class="split-box-val cyan">${escapeHtml(crowdWinner.short)} ${crowdPct.toFixed(1)}%</div>
+              </div>
+              <div>
+                <div class="split-box-lbl">The Money Says</div>
+                <div class="split-box-val lime">${escapeHtml(mktFav.short)} ${mktPct.toFixed(1)}%</div>
+              </div>
+            </div>
+            <p class="spot-copy">${escapeHtml(ev.headline)}</p>
+          </article>
+        `;
+      }).join('');
+    }
+
+    function renderGapBoard() {
+      const sorted = [...SNAPSHOT.events].sort((a, b) => b.abs_divergence_pp - a.abs_divergence_pp);
+      document.getElementById('gap-board').innerHTML = sorted.map(ev => {
+        const kPct = ev.side_a.kalshi_h2h_pct;
+        const cPct = ev.side_a.x_crowd_pct;
+        const left = Math.min(kPct, cPct);
+        const width = Math.max(Math.abs(kPct - cPct), 1.5);
+        const gapColor = ev.abs_divergence_pp >= 12 ? 'var(--coral)' : ev.abs_divergence_pp >= 5 ? 'var(--amber)' : 'var(--lime)';
+        return `
+          <div class="gap-row" onclick="jumpToCard('${ev.id}')">
+            <div>
+              <div class="gap-name">${escapeHtml(ev.title)}</div>
+              <div class="gap-sub">${escapeHtml(ev.side_a.short)} share: Kalshi ${kPct.toFixed(1)}% vs Crowd ${cPct.toFixed(1)}%</div>
+            </div>
+            <div class="gap-track" title="Lime = Kalshi (${kPct}%), Cyan = X Crowd (${cPct}%)">
+              <div class="gap-midline"></div>
+              <div class="gap-connector" style="left:${left}%; width:${width}%;"></div>
+              <div class="gap-dot kalshi" style="left:${kPct}%;"></div>
+              <div class="gap-dot crowd" style="left:${cPct}%;"></div>
+            </div>
+            <div class="gap-val" style="color:${gapColor};">${escapeHtml(ev.divergence_summary)}</div>
+          </div>
+        `;
+      }).join('');
+    }
+
+    let currentCat = 'ALL';
+    let currentSort = 'div';
+
+    function renderCards() {
+      let list = [...SNAPSHOT.events];
+      if (currentCat !== 'ALL') {
+        list = list.filter(e => e.category === currentCat);
+      }
+      if (currentSort === 'div') {
+        list.sort((a, b) => b.abs_divergence_pp - a.abs_divergence_pp);
+      } else if (currentSort === 'xvol') {
+        list.sort((a, b) => b.x_total_7d - a.x_total_7d);
+      } else if (currentSort === 'kvol') {
+        list.sort((a, b) => b.total_contracts - a.total_contracts);
+      }
+
+      document.getElementById('cards-grid').innerHTML = list.map(ev => {
+        const rawNote = ev.is_multi_outcome
+          ? ` (raw ${ev.side_a.kalshi_raw_cents.toFixed(1)}c vs ${ev.side_b.kalshi_raw_cents.toFixed(1)}c)`
+          : '';
+        const postsHtml = ev.evidence_posts.map(p => {
+          const leanText = p.lean === 'A' ? 'Leans ' + ev.side_a.short : p.lean === 'B' ? 'Leans ' + ev.side_b.short : 'Context';
+          return `
+            <a class="x-post" href="${escapeHtml(p.url)}" target="_blank" rel="noopener">
+              <div class="x-post-top">
+                <span>@${escapeHtml(p.author)} · ${fmtNum(p.likes)} likes · ${fmtNum(p.impressions)} views</span>
+                <span class="lean-pill">${escapeHtml(leanText)}</span>
+              </div>
+              <div>"${escapeHtml(p.text)}"</div>
+            </a>
+          `;
+        }).join('');
+
+        return `
+          <article class="ev-card" id="card-${ev.id}">
+            <div class="ev-top">
+              <div>
+                <div class="ev-tag">${escapeHtml(ev.tag)}</div>
+                <h3 class="ev-title">${escapeHtml(ev.title)}</h3>
+                <div class="ev-sub">${escapeHtml(ev.subtitle)}</div>
+              </div>
+              <span class="badge ${badgeClass(ev.regime)}">${ev.abs_divergence_pp.toFixed(1)} pp · ${escapeHtml(ev.regime)}</span>
+            </div>
+
+            <div class="bars-box">
+              <div class="sides-hdr">
+                <span>${escapeHtml(ev.side_a.label)} (${escapeHtml(ev.side_a.short)})</span>
+                <span style="color:var(--muted);">${escapeHtml(ev.side_b.label)} (${escapeHtml(ev.side_b.short)})</span>
+              </div>
+
+              <div>
+                <div class="bar-group-lbl">
+                  <span>KALSHI MARKET${escapeHtml(rawNote)}</span>
+                  <strong class="lime">${ev.side_a.kalshi_h2h_pct.toFixed(1)}% / ${ev.side_b.kalshi_h2h_pct.toFixed(1)}%</strong>
+                </div>
+                <div class="dual-bar">
+                  <div class="dual-fill-a lime" style="width:${ev.side_a.kalshi_h2h_pct}%;"></div>
+                  <div class="dual-fill-b"></div>
+                </div>
+              </div>
+
+              <div>
+                <div class="bar-group-lbl">
+                  <span>X CROWD COMPOSITE</span>
+                  <strong class="cyan">${ev.side_a.x_crowd_pct.toFixed(1)}% / ${ev.side_b.x_crowd_pct.toFixed(1)}%</strong>
+                </div>
+                <div class="dual-bar">
+                  <div class="dual-fill-a cyan" style="width:${ev.side_a.x_crowd_pct}%;"></div>
+                  <div class="dual-fill-b"></div>
+                </div>
+              </div>
+
+              <div class="metrics-strip">
+                <div class="m-item">7d X Buzz Split<b>${ev.side_a.x_buzz_pct.toFixed(1)}% (${fmtNum(ev.side_a.x_posts_7d)} vs ${fmtNum(ev.side_b.x_posts_7d)})</b></div>
+                <div class="m-item">Sample Lean (n=${ev.sample_posts_n})<b>${ev.side_a.x_sentiment_pct.toFixed(1)}% (${ev.side_a.x_sentiment_votes} vs ${ev.side_b.x_sentiment_votes} dir.)</b></div>
+                <div class="m-item">Kalshi Volume<b>${fmtDollars(ev.total_contracts)} (${fmtDollars(ev.vol_24h_contracts)} 24h)</b></div>
+              </div>
+            </div>
+
+            <div class="spark-row">
+              <div class="spark-meta">
+                <strong>7-Day X Trajectory</strong><br/>
+                Solid cyan: ${escapeHtml(ev.side_a.short)} (${fmtNum(ev.side_a.x_posts_7d)}) · Dashed: ${escapeHtml(ev.side_b.short)} (${fmtNum(ev.side_b.x_posts_7d)})
+              </div>
+              ${renderSparkline(ev.side_a.daily_series, ev.side_b.daily_series)}
+            </div>
+
+            <p class="ev-headline">${escapeHtml(ev.headline)}</p>
+
+            <details class="ev-details">
+              <summary>
+                <span>READ X EVIDENCE, STORYLINES &amp; ACTIVATION ANGLE</span>
+                <span>+</span>
+              </summary>
+              <div class="details-body">
+                <ul class="bullet-list">
+                  ${ev.story_bullets.map(b => `<li>${escapeHtml(b)}</li>`).join('')}
+                </ul>
+                <div class="activation-callout">
+                  <strong>Partnership Activation Angle</strong>
+                  ${escapeHtml(ev.activation_angle)}
+                </div>
+                <div class="posts-stack">${postsHtml}</div>
+                <div class="card-footer-links">
+                  <span>Ticker: ${escapeHtml(ev.id)}</span>
+                  <a href="${escapeHtml(ev.kalshi_url)}" target="_blank" rel="noopener">View on Kalshi &rarr;</a>
+                </div>
+              </div>
+            </details>
+          </article>
+        `;
+      }).join('');
+    }
+
+    document.getElementById('filter-pills').addEventListener('click', (e) => {
+      const btn = e.target.closest('.filter-btn');
+      if (!btn) return;
+      document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      currentCat = btn.dataset.cat;
+      renderCards();
+    });
+
+    document.getElementById('sort-select').addEventListener('change', (e) => {
+      currentSort = e.target.value;
+      renderCards();
+    });
+
+    renderHero();
+    renderSpotlight();
+    renderGapBoard();
+    renderCards();
+  </script>
+</body>
+</html>
